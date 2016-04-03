@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="JSQMessage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,83 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijq-WH-957">
+                                <rect key="frame" x="183" y="470" width="235" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="aE1-4i-wyo"/>
+                                    <constraint firstAttribute="width" constant="235" id="wYp-Ez-4F9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Login Anonimously">
+                                    <color key="titleColor" red="0.0" green="0.32487113909999998" blue="0.6865288329" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gj4-0Y-cIy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChaTeste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwh-28-BgQ">
+                                <rect key="frame" x="202" y="61" width="196" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="HzF-4j-CRh"/>
+                                    <constraint firstAttribute="width" constant="196" id="nkj-Ah-Vxb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32487113908716614" blue="0.68652883287292821" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ijq-WH-957" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FVB-yI-GaY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ijq-WH-957" secondAttribute="bottom" constant="86" id="GUN-IJ-pkR"/>
+                            <constraint firstItem="Mwh-28-BgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ibr-tm-Bin"/>
+                            <constraint firstItem="Mwh-28-BgQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="sY1-c6-s44"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="SLp-nD-gqW" kind="presentation" identifier="LoginToChat" id="bBa-Eq-65D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="230" y="324"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="Id4-Ed-WGQ">
+            <objects>
+                <viewController id="EM1-Gf-Ske" customClass="ChatViewController" customModule="JSQMessage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7MC-te-NMR"/>
+                        <viewControllerLayoutGuide type="bottom" id="b1R-Fk-wXA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kFp-eU-MoY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7Ce-PT-eYx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vff-6h-Q5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DPG-Fg-Jr2">
+            <objects>
+                <navigationController id="SLp-nD-gqW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GIz-X9-6ii">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EM1-Gf-Ske" kind="relationship" relationship="rootViewController" id="fv1-Rw-6vZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aO-BY-JQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="324"/>
         </scene>
     </scenes>
 </document>
